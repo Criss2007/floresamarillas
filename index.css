@@ -1,0 +1,80 @@
+/* Quita márgenes y scroll */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Video en todo el fondo */
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* llena la pantalla */
+      z-index: -1; /* lo manda atrás */
+    }
+
+    /* Contenido encima del video */
+    .contenido {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+      padding-top: 20%;
+      font-family: Arial, sans-serif;
+      text-shadow: 2px 2px 5px black;
+    }
+
+
+
+
+body {
+    background: #fffbe6;
+    color: #333;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    color: #ffd600;
+    margin-top: 40px;
+    font-size: 2.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 2px 2px 4px #aaa;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+.h2{
+    color: #000000;
+    margin-top: 40px;
+    font-size: 2.5em;
+}
+button:hover {
+    background: #ffea00;
+}
+#mensaje {
+    font-size: 1.2em;
+    color: #ffb300;
+}
+
+.button {
+    background-color: #FFD700;
+    color: #333;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 2px 2px 8px #aaa;
+    transition: background 0.3s;
+}
+.button:hover {
+    background-color: #FFEB3B;
+}

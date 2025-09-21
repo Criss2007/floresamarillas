@@ -1,0 +1,290 @@
+/* reset css */
+
+* 
+
+
+{
+    min-width: 0;
+    font: inherit;
+  }
+  /* Quita márgenes y scroll */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Video en todo el fondo */
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* llena la pantalla */
+      z-index: -1; /* lo manda atrás */
+    }
+
+    /* Contenido encima del video */
+    .contenido {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      font-size: 2rem;
+      padding-top: 20%;
+      font-family: Arial, sans-serif;
+      text-shadow: 2px 2px 5px black;
+    }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  img,
+  video,
+  svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height:  20sdvh;
+    background-color: #fffbe6;
+      color: #444;
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      padding: 0px;
+
+
+  }
+
+  h1 {
+    font-size: 2.9sem;
+    color: #fffc64;
+    margin-bottom: 0.5em;
+    text-shadow: 2px 2px 4px #aaa;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: opacity 0.5s ease;
+
+
+}
+
+h1.hidden {
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* styles */
+  /* TODO: Cambiar la fuente
+
+  * {
+    font-family: comic-sans;
+  } */
+
+  body {
+    background-color: #f0fad7;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+    justify-content: flex-start; /* Cambiado de 'center' a 'flex-start' */
+    align-items: center;
+    height: 100vh;
+    padding-top: 18vh; /* Añadido para empujar el contenido hacia abajo. Puedes ajustar el valor (ej. 10vh, 15vh) */
+  }
+
+  .container-letter {
+    position: relative;
+  }
+
+  .cover {
+  position: absolute;
+  border-left: 220px solid transparent; 
+  border-right: 240px solid transparent; 
+  border-top: 200px solid #fe3334;    
+  border-bottom: 97px solid transparent;
+
+  transition: transform .75s;
+  transform-origin: top;
+}
+
+.paper {
+  position: absolute;
+  padding: 3rem; /* ¡Aquí es donde lo ajustamos! Reducimos el padding */
+  line-height: 1.1rem; /* Un poco más compacto */
+  right: 15px;
+  z-index: -1;
+  background: white;
+   border: 10px solid black;
+  width: 440px;
+  height: 300px;  /* Corregido a 'px' en lugar de 'spx' */
+font-size: 0.72rem;
+  transition: all .75s;
+}
+
+.letter {
+  border-left: 230px solid #ff989e; 
+  border-right: 230px solid #ff989e; 
+  border-top: 120px solid transparent;
+   
+  top: 700px;
+  
+
+  border-bottom: 200px solid #ff858a; 
+}
+
+
+  .options {
+    display: flex;
+    gap: 5rem;
+
+    & button {
+      color: #ff3234;
+      font-weight: 600;
+      border-radius: 3px;
+      top: 2%;
+      position: relative;
+      background: #fad7df;
+      padding: 0.5rem 1rem;
+      border: 1px solid #fe3334;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: #000000  solid 3px;
+    }
+
+    & button:hover {
+      background: #ff989e;
+      color: white;
+    }
+  }
+
+  .open-cover {
+    transform: rotatex(180deg);
+  }
+
+  .open-paper {
+    animation: openPaper .5s forwards;
+  }
+
+  @keyframes openPaper {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -160px; /* Adjusted to match new letter height/bottom border */
+    }
+  }
+
+
+  .close-paper {
+    animation: closePaper .5s forwards;
+  }
+
+  @keyframes closePaper {
+    0% {
+      top: -160px; /* Adjusted */
+    }
+    100% {
+      top: 0;
+    }
+  }
+
+
+  .heart {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 46.5%;
+    margin: auto;
+    font-size: 3rem;
+
+    color: #fe3334;
+
+    animation: crecer 1s forwards ;
+  }
+
+  @keyframes crecer {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 3;
+      opacity: 0;
+
+    }
+  }
+@keyframes moverLados {
+  0% { transform: translateX(0) rotate(10deg); }
+  50% { transform: translateX(20px) rotate(10deg); } /* se mueve a la derecha */
+  100% { transform: translateX(0) rotate(10deg); }  /* regresa al inicio */
+}
+
+@keyframes moverLadosOpuesto {
+  0% { transform: translateX(0) rotate(-10deg); }
+  50% { transform: translateX(-20px) rotate(-10deg); } /* se mueve a la izquierda */
+  100% { transform: translateX(0) rotate(-10deg); }
+}
+
+/* Aplicas la animación a cada contenedor */
+.contenedor1 {
+  position: absolute;
+  width: 14%;
+  top: 2%;
+  left: 19%;
+  transform: rotate(10deg);
+  z-index: 20;
+  animation: moverLados 3s ease-in-out infinite;
+}
+
+.contenedor2 {
+  position: absolute;
+  width: 15%;
+  top: 2%;
+  left: 70%;
+  transform: rotate(-10deg);
+  z-index: 20;
+  animation: moverLadosOpuesto 3s ease-in-out infinite;
+}
+
+.contenedor3 {
+  position: absolute;
+  width: 15%;
+  top: 50%;
+  left: 12%;
+  transform: rotate(0deg);
+  z-index: 20;
+  animation: moverLados 4s ease-in-out infinite; /* diferente tiempo para variar */
+}
+
+.contenedor4 {
+  position: absolute;
+  width: 12%;
+  top: 50%;
+  left: 70%;
+  transform: rotate(0deg);
+  z-index: 20;
+  animation: moverLadosOpuesto 4s ease-in-out infinite;
+}
